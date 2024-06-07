@@ -669,6 +669,7 @@ section {
   font-weight: 700;
   font-size: 26px;
   color: #728394;
+  margin-top: 40px; /* Added margin-top to separate the heading from the paragraphs */
 }
 
 .about .content ul {
@@ -693,9 +694,20 @@ section {
   line-height: 0;
 }
 
+.about .content p {
+  margin-bottom: 20px; /* Added margin-bottom for spacing between paragraphs */
+}
+
 .about .content p:last-child {
   margin-bottom: 0;
 }
+
+.about .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 
 /*--------------------------------------------------------------
 # Facts
