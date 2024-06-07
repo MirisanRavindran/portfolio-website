@@ -827,6 +827,424 @@ highlight{
 
 
 
+/*--------------------------------------------------------------
+# What I'm Working On Section
+--------------------------------------------------------------*/
+
+.master {
+  display: flex;
+}
+.master div {
+  width: 98.6%;
+}
+@media all and (max-width: 500px) {
+.master div {
+    width: 99.9%;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .master {flex-flow: wrap;}
+}
+
+.column-adjustment {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.row-adjustment::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.skill-bars{
+  padding: 25px 30px;
+  background: #fff;
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+@media all and (max-width: 500px) {
+.skill-bars{
+    margin-bottom: 15px;
+  }
+}
+.skill-bars .bar{
+  margin: 20px 0;
+}
+.skill-bars .bar:first-child{
+  margin-top: 0px;
+}
+.skill-bars .bar .info{
+  margin-bottom: 5px;
+}
+.skill-bars .bar .info span{
+  font-weight: 500;
+  font-size: 17px;
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+
+@keyframes showText {
+  100%{
+    opacity: 1;
+  }
+}
+.skill-bars .bar .progress-line{
+  height: 10px;
+  width: 100%;
+  background: #f0f0f0;
+  position: relative;
+  transform-origin: left;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
+              0 1px rgba(255,255,255,0.8);
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+
+.bar .progress-line span{
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: black;
+}
+
+.bar .progress-line span.animated{
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.bar .progress-line.html span{
+  width: 90%;
+}
+.bar .progress-line.css span{
+  width: 72%;
+}
+.bar .progress-line.jquery span{
+  width: 91%;
+}
+.bar .progress-line.python span{
+  width: 83%;
+}
+
+.progress-line span.animated::before{
+  position: absolute;
+  content: "";
+  top: -10px;
+  right: 0;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000;
+  opacity: 0;
+    animation: showText 0.5s 1.5s linear forwards;
+}
+.progress-line span.animated::after{
+  position: absolute;
+  top: -28px;
+  right: 0;
+  font-weight: 500;
+  background: #000;
+  color: #fff;
+  padding: 1px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: showText 0.5s 1.5s linear forwards;
+}
+
+.progress-line.html span::after{
+  content: "90%";
+}
+.progress-line.css span::after{
+  content: "72%";
+}
+.progress-line.jquery span::after{
+  content: "91%";
+}
+.progress-line.python span::after{
+  content: "83%";
+}
+
+.skill-bars .bar .info line {
+  font-weight: 500;
+  font-size: 17px;
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+
+.bar .progress-line line {
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: black;
+}
+.bar .progress-line line.animated{
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+
+}
+
+.bar .progress-line.html line {
+  width: 90%;
+}
+
+.bar .progress-line.css line {
+  width: 90%;
+}
+
+.bar .progress-line.jquery line {
+  width: 90%;
+}
+
+.bar .progress-line.python line {
+  width: 90%;
+}
+
+.bar .progress-line.mysql line {
+  width: 92%;
+}
+
+.progress-line line.animated::before {
+  position: absolute;
+  content: "";
+  top: -10px;
+  right: 0;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000;
+  opacity: 0;
+  animation: showText 0.5s 1.5s linear forwards;
+}
+
+.progress-line line.animated::after {
+  position: absolute;
+  top: -28px;
+  right: 0;
+  font-weight: 500;
+  background: #000;
+  color: #fff;
+  padding: 1px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: showText 0.5s 1.5s linear forwards;
+}
+
+.progress-line.css line::after {
+  content: "90%";
+}
+
+.progress-line.jquery line::after {
+  content: "90%";
+}
+
+.progress-line.python line::after {
+  content: "90%";
+}
+
+.progress-line.mysql line::after {
+  content: "92%";
+}
+
+
+
+/*--------------------------------------------------------------
+# Button Styles
+--------------------------------------------------------------*/
+.buttonWrapper {
+  height: 46.5px;
+  width: 81px;
+  position: relative;
+}
+
+.buttonContact {
+  background: #0563bb;
+  height: 47px;
+  width: 96.5px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 10;
+}
+.buttonContact:hover{
+  opacity: 0.9;
+}
+
+.text {
+  font: .7rem/1;
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.progress-bar {
+  position: absolute;
+  height: 20px;
+  width: 0;
+  left: 40px;
+  top: 50%;
+  border-radius: 200px;
+  transform: translateY(-50%) translateX(-50%);
+  background: #0563bb;
+}
+.package{
+  justify-content: center;
+}
+
+.package svg {
+  width: 15px;
+  position: absolute;
+  top: 50%;
+  left: 19px;
+  transform: translateY(-50%) translateX(-8px);
+}
+
+.check {
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/*--------------------------------------------------------------
+# Banner Section
+--------------------------------------------------------------*/
+
+.exponea-banner {
+  font-family: Roboto, sans-serif;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #2e364d;
+  color: #ebeef7;
+  padding: 30px 80px 30px 35px;
+  font-size: 16px;
+  line-height: 1;
+  border-radius: 5px;
+  box-shadow: 0 3px 30px rgba(116, 119, 176, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s;
+  transition-delay: 0.2s;
+}
+
+.exponea-banner .exponea-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  font-size: 25px;
+  font-weight: 300;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+
+.exponea-banner .exponea-text {
+  margin-bottom: 8px;
+}
+
+.exponea-banner .exponea-count {
+  opacity: 0.7;
+  font-weight: 300;
+  align-items: center;
+  display: flex;
+}
+
+.exponea-banner,
+.exponea-close,
+.exponea-text {
+  z-index: 999;
+}
+
+.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Project Section Details
+--------------------------------------------------------------*/
+.underline {
+  --line: #646B8C;
+  --color: #2B3044;
+  text-decoration: none;
+  color: var(--color);
+  position: relative;
+   width: 140px;
+  margin: 16px 0;
+}
+proj{
+  color: lightblue;
+}
+.underline span {
+  background-image: linear-gradient(0deg, var(--line) 0%, var(--line) 100%);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: var(--background-size, 100%) 1px;
+  transition: background-size 0.2s linear var(--background-delay, 0.15s);
+  font-size: 16px;
+  line-height: 20px;
+  transform: translateZ(0);
+}
+.underline spanS {
+  background-image: linear-gradient(0deg, var(--line) 0%, var(--line) 100%);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: var(--background-size, 100%) 1px;
+  transition: background-size 0.2s linear var(--background-delay, 0.15s);
+  font-size: 14px;
+  line-height: 19px;
+  transform: translateZ(0);
+}
+.underline svg {
+  vertical-align: top;
+  display: none;
+  line-height: 1;
+  width: auto;
+  height: 0;
+  position: relative;
+  left: -2px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.underline:hover {
+  --background-size: 0%;
+  --background-delay: 0s;
+  --stroke-dashoffset: 26;
+  --stroke-duration: .3s;
+  --stroke-easing: cubic-bezier(.3, 1.5, .5, 1);
+  --stroke-delay: .195s;
+}
+
+
+
 
 
 
