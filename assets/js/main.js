@@ -98,6 +98,53 @@
     this.classList.toggle('bi-x')
   })
 
+
+  // Get the banners
+var banner1 = document.querySelector('[data-banner="first"]');
+var banner2 = document.querySelector('[data-banner="second"]');
+
+
+const closeBanner = (banner, activeClass, closeEl) => {
+  // Get "close" element and add the event to remove active class 
+  let close = banner.querySelector(`.${closeEl}`)
+  close.addEventListener('click', () => {
+    banner.classList.remove(activeClass);
+  });
+}
+
+const activeBanner = (banner, activeClass, closeEl) => {
+  // Active the banner and call the closeBanner function
+  banner.classList.add(activeClass);
+  closeBanner(banner, activeClass, closeEl)
+}
+
+
+// Banner one handler
+const bannerOneHandler = (banner) => {
+  activeBanner(banner, 'open', 'exponea-close');
+};
+// Banner two handler
+const bannerTwoHandler = (banner) => {
+  let executionFlag = true;
+  const percentToScroll = 0.9;
+
+  window.addEventListener('scroll', () => {
+    let windowHeightScroll = window.innerHeight + window.scrollY;
+    let targetScroll = document.body.offsetHeight * percentToScroll
+
+    if (windowHeightScroll >= targetScroll && executionFlag) {
+      executionFlag = false;
+      activeBanner(banner, 'open', 'exponea-close');
+    }
+  });
+};
+
+
+// Call the functions
+bannerOneHandler(banner1)
+bannerTwoHandler(banner2)
+
+
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
