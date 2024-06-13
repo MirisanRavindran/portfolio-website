@@ -233,6 +233,50 @@
     }
   });
 
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+
+    document.querySelectorAll("figure.snip1311").forEach((el) => {
+  
+      // Select all the read more buttons and hidden contents
+      const readMoreButtons = el.querySelectorAll(".read-more");
+      const hiddenContents = el.querySelectorAll(".hidden");
+  
+      // Now loop over the read more buttons 
+      readMoreButtons.forEach((readMoreButton, index) => {
+        // Add onclick event listeners to all of them
+        readMoreButton.addEventListener("click", () => {
+          // Change content of read more button to read less based on the textContent
+          if (readMoreButton.textContent === "Read More") {
+            readMoreButton.textContent = "Read Less";
+          } else {
+            readMoreButton.textContent = "Read More";
+          }
+  
+          readMoreButton.closest(".snip1311").classList.toggle("reading");
+          hiddenContents[index].classList.toggle("hidden");
+        });
+      });
+  
+      el.addEventListener('mouseenter', e => {
+        e.target.classList.add('hover');
+      });
+  
+      el.addEventListener('mouseleave', e => {
+        e.target.classList.remove('hover');
+        setTimeout(() => {
+          readMoreButtons.forEach((readMoreButton, index) => {
+            readMoreButton.textContent = "Read More";
+            readMoreButton.closest(".snip1311").classList.remove("reading");
+            hiddenContents[index].classList.add("hidden");
+          });
+        }, 100);
+      });
+    });
+  });
+  
+  
+
   /**
    * Testimonials slider
    */
